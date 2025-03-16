@@ -1,0 +1,39 @@
+{% include "header.html" %}
+
+<div class="container auth-container">
+    <h2 class="text-center text-glow">Login</h2>
+    <!-- Show validation messages -->
+    {% if messages %}
+    <div class="alert-container">
+        {% for message in messages %}
+            {% if message.tags == 'error' %}
+                <div class="alert alert-danger">
+                    <p>{{ message }}</p>
+                </div>
+            {% else %}
+                <div class="alert alert-success">
+                    <p>{{ message }}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control futuristic-input" id="username" name="username" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control futuristic-input" id="password" name="password" required>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary futuristic-btn">Login</button>
+        </div>
+    </form>
+    <p class="text-center mt-3"><a href="{% url 'register' %}">Don't have an account? Register</a></p>
+</div>
+
+{% include "footer.html" %}

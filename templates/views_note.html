@@ -1,0 +1,47 @@
+{% include "header.html" %}
+
+<div class="container mt-5">
+    <h1 class="mb-4 text-center text-primary fw-bold">My Notes</h1>
+
+    <div class="table-responsive">
+        <table class="table table-hover shadow-lg" style="border-radius: 12px; overflow: hidden;">
+            <thead class="table-dark text-light">
+                <tr class="text-center">
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Deadline</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in Notes %}
+                    <tr class="align-middle text-center">
+                        <td><strong>#{{ i.id }}</strong></td>
+                        <td>{{ i.name }}</td>
+                        <td>{{ i.description|truncatewords:10 }}</td>
+                        <td><span class="badge bg-info text-dark">{{ i.type.name }}</span></td>
+                        <td>
+                            {% if i.deadline_at %}
+                                <span class="badge bg-warning text-dark">{{ i.deadline_at }}</span>
+                            {% else %}
+                                <span class="badge bg-secondary">No Deadline</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="{% url 'edit_note' pk=i.id %}" class="btn btn-outline-success btn-sm fw-bold">EDIT</a>
+                            <a href="{% url 'delete_note' pk=i.id %}" class="btn btn-outline-danger btn-sm fw-bold">DELETE</a>
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="6" class="text-center text-muted">No notes available.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% include "footer.html" %}

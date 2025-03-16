@@ -1,0 +1,48 @@
+{% include "header.html" %}
+
+<div class="container content">
+    <h1 class="mb-4 text-center title">Edit Note</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="mb-4">
+            <label for="name" class="form-label">Note Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter the name of the note" value="{{ Note.name }}" required>
+        </div>
+
+        <div class="mb-4">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" id="description" name="description" rows="4" placeholder="Enter a description for the note">{{ Note.description }}</textarea>
+        </div>
+
+        <div class="mb-4">
+            <label for="file" class="form-label">Attach a File</label>
+            {% if Note.file %}
+                <p><a href="{{ Note.file.url }}" target="_blank">Current File: {{ Note.file.name }}</a></p>
+            {% endif %}
+            <input type="file" class="form-control" name="file" id="file">
+        </div>
+
+        <div class="mb-4">
+            <label for="type" class="form-label">Note Type</label>
+            <select id="type" class="form-select" name="type">
+                <option value="" disabled selected>Select a note type</option>
+                {% for i in NoteType %}
+                    <option value="{{ i.id }}" {% if Note.type.id == i.id %} selected {% endif %}>{{ i.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label for="deadline_at" class="form-label">Deadline</label>
+            <input type="date" class="form-control" id="deadline_at" name="deadline_at" value="{{ Note.deadline_at|date:'Y-m-d' }}">
+        </div>
+
+        <div class="text-center mb-4">
+            <button type="submit" class="btn btn-success btn-lg submit-btn">Update Note</button>
+        </div>
+    </form>
+</div>
+
+{% include "footer.html" %}

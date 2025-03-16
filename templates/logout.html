@@ -1,0 +1,12 @@
+{% include "header.html" %}
+
+<div class="container auth-container text-center">
+    <h2 class="text-glow">Logout</h2>
+    <p>Are you sure you want to log out?</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger futuristic-btn">Logout</button>
+    </form>
+</div>
+
+{% include "footer.html" %}

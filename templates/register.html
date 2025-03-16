@@ -1,0 +1,39 @@
+{% include "header.html" %}
+
+    <div class="container auth-container">
+        <h2 class="text-center text-glow">Register</h2>
+
+    {% if messages %}
+        <div class="alert alert-danger">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+    
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control futuristic-input" id="username" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control futuristic-input" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="password1" class="form-label">Password</label>
+                <input type="password" class="form-control futuristic-input" id="password1" name="password1" required>
+            </div>
+            <div class="mb-3">
+                <label for="password2" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control futuristic-input" id="password2" name="password2" required>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-success futuristic-btn">Register</button>
+            </div>
+        </form>
+        <p class="text-center mt-3"><a href="{% url 'login' %}">Already have an account? Login</a></p>
+    </div>
+
+    {% include "footer.html" %}

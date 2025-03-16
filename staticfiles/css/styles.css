@@ -1,0 +1,431 @@
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f7fc; /* Light background for a professional look */
+    color: #333; /* Dark text for readability */
+    line-height: 1.6;
+}
+/* Futuristic Fixed Navbar Styling */
+.navbar {
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb); /* Light gradient for navbar */
+    padding: 12px 30px;
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2); /* Subtle shadow for depth */
+    border-radius: 0; /* Rectangular navbar */
+    transition: all 0.3s ease-in-out;
+
+    /* Fully Fixed Navbar */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures navbar stays on top */
+}
+
+/* Navbar Brand Styling */
+.navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9); /* Glowing effect */
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+    color: #ffcc00; /* Yellow color on hover */
+    text-shadow: 0px 0px 20px rgba(255, 204, 0, 0.9); /* Glowing text on hover */
+}
+
+/* Navbar Links */
+.nav-link {
+    color: white; /* White text */
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 8px 15px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase; /* Uppercase text for modern look */
+    letter-spacing: 1px; /* Spacing between letters */
+}
+
+.nav-link:hover {
+    color: #ffcc00; /* Yellow color on hover */
+    text-shadow: 0 0 15px rgba(255, 204, 0, 0.7); /* Glowing effect */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Active link effect (now red color) */
+.nav-item .active {
+    color: #ff0000 !important; /* Red color for active link */
+    text-shadow: 0 0 15px rgba(255, 0, 0, 1); /* Glowing red effect */
+    border-bottom: 2px solid #ff0000; /* Red underline for active link */
+    transform: translateY(-3px); /* Lift effect on active link */
+}
+
+/* Navbar item animation */
+.navbar-nav .nav-item {
+    transform: translateY(-10px);
+    opacity: 0;
+    animation: slideIn 0.5s ease-in-out forwards;
+}
+
+.navbar-nav .nav-item:nth-child(1) { animation-delay: 0.1s; }
+.navbar-nav .nav-item:nth-child(2) { animation-delay: 0.2s; }
+.navbar-nav .nav-item:nth-child(3) { animation-delay: 0.3s; }
+.navbar-nav .nav-item:nth-child(4) { animation-delay: 0.4s; }
+.navbar-nav .nav-item:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Full height */
+}
+
+/* Ensuring Content Doesn't Overlap Navbar */
+.main-content {
+    padding-top: 80px; /* This pushes the content below the navbar */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 20px; /* Adjust padding on mobile */
+    }
+    .navbar-brand {
+        font-size: 1.7rem; /* Adjust brand size on mobile */
+    }
+    .nav-link {
+        font-size: 1rem; /* Adjust link size on mobile */
+    }
+    .main-content {
+        padding-top: 70px; /* Adjust space for mobile */
+    }
+}
+
+
+
+/* Ensure Content is Below the Fixed Navbar */
+body {
+    padding-top: 80px; /* Adjust based on navbar height */
+}
+
+
+/* Body Styling - Light Futuristic Theme */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e0f7fa, #f8f9fa, #e3ecff); /* Soft futuristic theme */
+    color: #333; /* Dark text for readability */
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main Content Wrapper */
+.main-content {
+    flex: 1; /* Pushes the footer to the bottom */
+    padding: 20px;
+}
+
+/* Styling for Sections */
+section {
+    background: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 90%;
+}
+
+/* Text Styling */
+h1, h2, h3 {
+    color: #222;
+    text-align: center;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #444;
+    text-align: justify;
+}
+
+/* Button Styling */
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: white;
+    background: linear-gradient(135deg, #0072ff, #00c6ff);
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #0056b3, #0096c7);
+    transform: scale(1.05);
+}
+
+
+
+/* Footer Styling */
+.footer {
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb); /* Matching gradient with navbar */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0; /* Thin footer with padding */
+    width: 100%;
+    font-size: 1rem;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+}
+
+/* Ensuring text is centered inside the footer */
+.footer p {
+    margin: 0;
+    font-weight: 500;
+    color: #333; /* Dark text color for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Footer Links */
+.footer p a {
+    color: #ffcc00; /* Yellow text link color */
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.footer p a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* ................................................css for create note.......................................................... */
+/* 🌌 Futuristic Theme Colors */
+:root {
+    --primary-color: #00c6ff; /* Vibrant Blue */
+    --secondary-color: #0072ff; /* Deep Blue */
+    --accent-color: #ffcc00; /* Neon Yellow */
+    --text-light: #ffffff;
+    --text-dark: #222;
+    --footer-bg: #0a0f1e; /* Dark theme for footer */
+    --bg-gradient: linear-gradient(135deg, #eef2f3, #8e9eab); /* Light theme for form background */
+}
+
+/* 🎨 Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 📄 Content Centering */
+.content {
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    margin-top: 50px;
+}
+
+/* 🏆 Title Styling */
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    text-shadow: 0px 2px 10px rgba(0, 114, 255, 0.5);
+}
+
+/* 📝 Input & Textarea Styling */
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 2px solid var(--primary-color);
+    transition: 0.3s ease-in-out;
+    box-shadow: none;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.5);
+}
+
+/* 📎 File Input Styling */
+input[type="file"] {
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    background: #eef2f3;
+    transition: 0.3s ease-in-out;
+}
+
+/* 📅 Date Input Styling */
+input[type="date"] {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    border: 2px solid var(--primary-color);
+    padding: 10px;
+}
+
+/* ✅ Submit Button Styling */
+.submit-btn {
+    background: var(--secondary-color);
+    color: var(--text-light);
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: var(--accent-color);
+    color: var(--text-dark);
+}
+
+
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    .title {
+        font-size: 1.8rem;
+    }
+}
+
+
+/* Centering Auth Forms */
+.auth-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+/* Text Glow Effect */
+.text-glow {
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
+
+/* Input Fields */
+.futuristic-input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 255, 255, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Buttons */
+.futuristic-btn {
+    background: linear-gradient(135deg, #ff0000, #ff7300);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.futuristic-btn:hover {
+    background: linear-gradient(135deg, #ff7300, #ff0000);
+    box-shadow: 0 0 10px rgba(255, 115, 0, 0.7);
+}
+
+
+/*.............................................. create notetype.................................... */
+
+/* Table Styles */
+.table {
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+    border-radius: 10px;
+    background-color: #ffffff; /* Clean background */
+    overflow: hidden; /* Ensures no overflow from the rounded edges */
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.1); /* Blue hover effect */
+    transform: scale(1.02); /* Slightly enlarge on hover */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Header Styles */
+th, td {
+    padding: 12px;
+    vertical-align: middle;
+    text-align: center; /* Center the text in the table cells */
+}
+
+th {
+    background-color: #343a40; /* Dark background color for header */
+    color: #fff; /* White text color */
+    text-transform: uppercase; /* Uppercase header text */
+    font-weight: bold; /* Bold text for clarity */
+    font-size: 1.1rem; /* Slightly larger header font */
+}
+
+/* Action Buttons */
+.btn-outline-success, .btn-outline-danger {
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px; /* Rounded corners for buttons */
+    font-weight: 600;
+}
+
+.btn-outline-success:hover, .btn-outline-danger:hover {
+    transform: scale(1.05); /* Slightly increases button size */
+    filter: brightness(1.2); /* Brighter button effect */
+}
+
+/* Text Color and Title Styling */
+.title {
+    color: #007bff; /* Blue color for the title */
+    font-family: 'Arial', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.table-responsive {
+    margin-top: 20px;
+    max-height: 500px; /* Ensures the table has a maximum height */
+    overflow-y: auto; /* Makes the table scrollable if content overflows */
+}
+
+
+/* ......................................................home page................................................ */
+
+
+
+
+
